@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<title></title>
+	<meta charset ="utf-8">
+	<style>
+		.item{
+			margin-top:2px; 
+			width: 400px;
+		}
+		input[type = "radio"]{
+			display: none;
+			
+		}
+		label{
+			width:100%;
+			display: block;
+			text-align: center;
+			color: #333;
+		    background-color: #f5f5f5;
+		    border:1px solid #ddd;
+		    border-radius: 3px;
+		    padding:5px 0px;
+		}
+		.panal{
+			height:0px;
+			width:100%;
+			overflow: hidden;
+			transition: 1000ms;
+			border-color: #ddd;
+		}
+		input[type = "radio"]:checked ~ .panal{
+			height: 100px;
+			border:1px solid #ddd;
+			border-top:none;
+			margin-bottom: 3px;
+			border-radius: 3px;
+		}
+	</style>
+</head>
+<body>
+ <div class = "wrap">
+	<div class = "item">
+		<input type = "radio" name = "radio" id = "radio1">
+		<label for  = "radio1">条目一</label>
+		<div class = "panal">遇见你的眉眼如清风明月,顾盼流连亦如初见</div>
+	</div>
+	<div class = "item">
+		<input type = "radio" name = "radio" id = "radio2">
+		<label for  = "radio2">条目一</label>
+		<div class = "panal">遇见你的眉眼如清风明月,顾盼流连亦如初见</div>
+	</div>
+	<div class = "item">
+		<input type = "radio" name = "radio" id = "radio3">
+		<label for  = "radio3">条目一</label>
+		<div class = "panal">遇见你的眉眼如清风明月,顾盼流连亦如初见</div>
+	</div>
+ </div>
+</body>
+</html>
+
+<!-- 该效果主要是利用radio的单选功能，通过checked状态，决定哪一个面板应该被展开，结合transition改变面板高度，达到折叠面板的效果 -->

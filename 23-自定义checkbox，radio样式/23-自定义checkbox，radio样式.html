@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<title>自定义checkbox， radio样式</title>
+	<meta charset="utf-8">
+	<style type="text/css">
+		input{
+					display: none;
+		}
+
+		/* ----伪元素---- */
+	.weiyuansu input + label{
+			cursor: pointer;
+			display: inline-block;
+			height: 16px;
+			width: 16px;
+			border: 1px solid #d9d9d9;
+			position: relative;
+		}
+	.weiyuansu	input[type = "radio"] + label{
+			border-radius: 50%;
+		}
+	.weiyuansu	input:checked + label{
+			border-color: #d73d32;
+		}
+	.weiyuansu	input[type = "radio"]:checked + label::after{
+			position: absolute;
+			content: " ";
+			display: inline-block;
+			height: 6px;
+			width:6px;
+			border-radius: 50%;
+			top:0px;
+			bottom: 0px;
+			right: 0px;
+			left: 0px;
+			margin: auto;
+			background-color: #d73d32;
+		}
+	.weiyuansu  input[type = "checkbox"]:checked + label::after{  /* 复选按钮 */
+			position: absolute;
+			content: "";
+			display: inline-block;
+			height: 6px;
+			width:3px;
+			border-bottom: 2px solid #d73d32;
+			border-right: 2px solid #d73d32;
+			transform: rotateZ(30deg);
+			top:0px;
+			bottom: 0px;
+			right: 0px;
+			left: 0px;
+			margin: auto;
+		}
+
+		/* -----雪碧图----- */
+	.sprites input + label{
+		display: inline-block;
+		cursor: pointer;
+		background:url("icon.png") no-repeat;
+		height: 16px;
+		width: 16px;
+	}
+	.sprites input[type = "radio"] + label{
+		background-position: -24px -10px;
+	}
+	.sprites input[type = "checkbox"] + label{
+		background-position: -24px -33px;
+	}
+	.sprites input[type = "radio"]:checked + label{
+		background-position: -59px -10px;
+	}
+	.sprites input[type = "checkbox"]:checked + label{
+		background-position: -60px -32px;
+	}
+	</style>
+</head>
+<body>
+<div class = "weiyuansu">
+	<h1>伪元素</h1>
+	<div>
+		<input type="radio" name="radio" id = "radio11" checked="checked">
+		<label for="radio11"></label>
+		<input type="radio" name="radio" id = "radio12">
+		<label for="radio12"></label>
+	</div>
+	<div>
+		<input type="checkbox" name="checkbox" id = "checkbox11" checked="checked">
+		<label for="checkbox11"></label>
+		<input type="checkbox" name="checkbox" id = "checkbox12">
+		<label for="checkbox12"></label>
+	</div>
+</div>
+<div class = "sprites">
+	<h1>雪碧图</h1>
+	<div>
+		<input type="radio" name="radio" id = "radio21" checked="checked">
+		<label for="radio21"></label>
+		<input type="radio" name="radio" id = "radio22">
+		<label for="radio22"></label>
+	</div>
+	<div>
+		<input type="checkbox" name="checkbox" id = "checkbox21" checked="checked">
+		<label for="checkbox21"></label>
+		<input type="checkbox" name="checkbox" id = "checkbox22">
+		<label for="checkbox22"></label>
+	</div>
+</div>
+</body>
+</html>
